@@ -1,0 +1,117 @@
+#section1,#section2,#section3 {
+    background-size:cover;
+    background-position:center;
+}
+#section1 {
+    background-image:url(images/starry-night.jpg);
+}
+#section2 {
+    background-image:url(images/skyline2.jpg);
+}
+#section3 {
+    background-image:url(images/sunset-background.jpg);
+}
+p,a {
+    color:white;
+    font-family:'Open Sans',sans-serif;
+    font-size:120%;
+}
+.container h3 {
+    color:white;
+    font-family:'Julius Sans One',sans-serif;
+}
+.container h1 {
+    color:white;
+    font-family:'Julius Sans One',sans-serif;
+}
+.container h2 {
+    color:white;
+    font-family:'Julius Sans One',sans-serif;
+}
+.container-fluid h3 {
+    color:white;
+    font-family:'Julius Sans One',sans-serif;
+}
+.container-fluid h1 {
+    color:white;
+    font-family:'Julius Sans One',sans-serif;
+}
+#name,#about,#contact,#portfolio,#my-pic {opacity:0;}
+#section2 .container {
+    color: #000;
+    background:#000;
+    background: rgba(0,0,0, 0.5);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+#section3 .container {
+    color: #000;
+    background:#000;
+    background: rgba(0,0,0, 0.5);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+#section3 .container .row {padding:1%;}
+#menu li {
+    display:inline-block;
+    margin: 10px;
+    color: #000;
+    background:#fff;
+    background: rgba(255,255,255, 0.5);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+#menu li.active{
+    background: #666;
+    background: rgba(0,0,0, 0.5);
+    color: #fff;
+}
+#menu li a{
+    text-decoration:none;
+    color: #000;
+}
+#menu li.active a:hover{
+    color: #000;
+}
+#menu li:hover{
+    background: rgba(255,255,255, 0.8);
+}
+#menu li a, #menu li.active a{
+    padding: 9px 18px;
+    display:block;
+}
+#menu li.active a{
+    color: #fff;
+    background: #999;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+#menu{
+    position:fixed;
+    top:0;
+    left:0;
+    height: 40px;
+    z-index: 70;
+    width: 100%;
+    padding: 0;
+    margin:0;
+}
+ul,ol {list-style:none;}
+#my-pic {width:100%;height:auto;}
+
+@media(max-width:320px),(max-width:640px),(max-width:667px) {
+    p,a {
+        color:white;
+        font-family:'Open Sans',sans-serif;
+        font-size:110%;
+    }
+    #my-pic {width:150px;height:200px;}
+    #name,#about,#contact,#portfolio,#my-pic {opacity:1;}
+}
+
+/*#name {
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}

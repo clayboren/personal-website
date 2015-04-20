@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- 
+Author: Clayton Boren
+Date created: 03-24-2015
+** Copyright Clay Boren 2015 **
+-->
+<html>
+    <head>
+        <title>Clay Boren</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Clay Boren">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="jquery.fullPage.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300|Julius+Sans+One' rel='stylesheet' type='text/css'>
+        <link rel="icon" href="images/icon.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+        <script src="jquery.fullPage.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#fullpage').fullpage({
+                    anchors: ['firstPage', 'secondPage', 'thirdPage','lastPage'],
+                    menu: '#menu',
+                    autoScrolling:false,
+                    scrollBar:true,
+                    fitToSection:false
+                });
+                //$('#name').hide();
+                //$('#name').fadeIn(2750);
+                function fade() {
+                    $('#name,#about,#contact,#portfolio,#my-pic').each(function() {
+                        /* Check the location of each desired element */
+                        var objectBottom = $(this).offset().top + $(this).outerHeight();
+                        var windowBottom = $(window).scrollTop() + $(window).innerHeight();
+
+                        /* If the object is completely visible in the window, fade it in */
+                        if (objectBottom < windowBottom) {
+                            if ($(this).css('opacity')==0) {$(this).fadeTo(750,1);}
+                        } else {
+                            if ($(this).css('opacity')==1) {$(this).fadeTo(750,0);}
+                        }
+                    });
+                }
+                if ($(window).width()>667) {
+                    fade(); //Fade in completely visible elements during page-load
+                    $(window).scroll(function() {fade();}); //Fade in elements during scroll
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <ul id="menu">
+            <li data-menuanchor="firstPage"><a href="#firstPage">Home</a></li>
+            <li data-menuanchor="secondPage"><a href="#secondPage">About</a></li>
+            <li data-menuanchor="thirdPage"><a href="#thirdPage">Resume</a></li>
+        </ul>
+        <div id="fullpage">
+            <div class="section active" id="section1">
+                <div class="container" id="name" align="center">
+                    <h1>Clayton L. Boren</h1>
+                    <h3>Web Design &amp; Development</h3>
+                </div>
+            </div>
+            <div class="section" id="section2">
+                <div class="container">
+                    <h3 style="text-decoration: none;border-bottom: solid white;width:100%;border-bottom-width:medium;">About Me</h3>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img id="my-pic" src="images/linkedin_pic3.jpg" width="350" height="500"/>
+                        </div>
+                        <div class="col-sm-10" align="left" id="about">
+                            <p>I'm a web developer currently living in the Nashville Metro area. I specialize in developing responsive web applications using mobile-first design principles. I've been doing some freelance work, but I would really like to find a full-time web development position. If you're looking to hire, then please contact me!</p>
+                            <p> &#8226; Visit my <a href="http://goo.gl/V9MSBi" style="color:#6699FF;" target="_blank">GitHub</a> page to view some of my former and current projects.</p>
+                            <p> &#8226; Find me on <a href="http://goo.gl/tSphvQ" style="color:#6699FF;" target="_blank">LinkedIn</a>!</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6" id="contact">
+                            <h3 style="text-decoration: none;border-bottom: solid white;width:100%;border-bottom-width:medium;">Contact Info</h3>
+                            <p>356 Summit Ridge Circle &#8226; Nashville, TN 37215</p>
+                            <p>Phone: (256) 483-7932</p>
+                            <p>Email: claytonboren@gmail.com</p>
+                        </div>
+                        <div class="col-sm-6" id="portfolio">
+                            <h3 style="text-decoration: none;border-bottom: solid white;width:100%;border-bottom-width:medium;">Portfolio</h3>
+                            <a href="http://firstchoiceflorence.com/" target="_blank"><img src="images/new-logo.jpg" height="100" width="275" style="padding-bottom:1%;"/></a>
+                            <a href="http://additions-studio.com/" target="_blank"><img src="images/additions-sample.jpg" height="100" width="250" style="padding-bottom:1%;"/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section3">
+                <div class="container">
+                    <div class="row">
+                        <h1 style="text-decoration:none;border-bottom:solid white;width:100%;border-bottom-width:medium;"><b>Resume</b></h1>
+                        <a href="Clay%20Resume%20(Web-Nashville).pdf" target="_blank" style="color:#6699FF;">Printable Version</a>
+                        <h3 style="text-decoration: none;border-bottom: solid white;width:100%;border-bottom-width:medium;">Education &amp; Certifications</h3>
+                        <div class="col-sm-6">
+                            <p><b>University of North Alabama</b></p>
+                            <p> &#8226; Studied Computer Science and completed 4 years of college coursework.</p>
+                            <p><b>Mars Hill Bible School</b></p>
+                            <p> &#8226; Received High School Diploma</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p><b>CompTIA A+ certification</b></p>
+                            <p><b>CompTIA Security+ certification</b></p>
+                            <p><b>Microsoft Technology Associate in Networking Fundamentals</b></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3 style="text-decoration: none;border-bottom: solid white;width:100%;border-bottom-width:medium;">Technical Skills</h3>
+                        <div class="col-xs-6">
+                            <p>HTML &amp; HTML5</p>
+                            <p>CSS &amp; CSS3</p>
+                            <p>PHP</p>
+                            <p>MySQL</p>
+                            <p>JavaScript &amp; jQuery</p>
+                            <p>Apache Web Server (Linux)</p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p>Adobe Photoshop</p>
+                            <p>Adobe Illustrator</p>
+                            <p>Search Engine Optimization (SEO)</p>
+                            <p>Git Version Control (GitHub)</p>
+                            <p>Bootstrap Framework</p>
+                            <p>iOS Development</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3 style="text-decoration: none;border-bottom: solid white;width:100%;border-bottom-width:medium;">Work Experience</h3>
+                        <div class="col-sm-6">
+                            <p><b>Freelance Web Design</b></p>
+                            <p>Dates Employed: 11/2014 - Present</p>
+                            <p> &#8226; I utilized open-source tools to hand code all of my web projects.</p>
+                            <p> &#8226; I developed all of my web projects using mobile-first design principles.</p>
+                            <hr>
+                            <p><b>Dell Services Federal Government - Help Desk Technician</b></p>
+                            <p>Dates Employed: 11/2014 - 03/2015</p>
+                            <p> &#8226; I worked as a contractor on the Army Enterprise Service Desk.</p>
+                            <p> &#8226; I provided over-the-phone IT support to US Army personnel.</p>
+                            <hr>
+                            <p><b>Forsythe &amp; Long Engineering – IT Department</b></p>
+                            <p>Dates Employed: 12/2013 - 05/2014</p>
+                            <p> &#8226; I was responsible for upkeep and maintenance of all employee PCs.</p>
+                            <p> &#8226; I worked in a primarily Windows desktop environment.</p>
+                            <hr>
+                        </div>
+                        <div class="col-sm-6">
+                            <p><b>TNT Fireworks – Credit Card Department</b></p>
+                            <p>Dates Employed: 05/2013 - 08/2013</p>
+                            <p> &#8226; I assisted stand operators with their credit card machines over the phone.</p>
+                            <p> &#8226; I audited the accounts of several stand operators.</p>
+                            <hr>
+                            <p><b>Mars Hill Bible School - Maintenance Department</b></p>
+                            <p>Dates Employed: 05/2008 - 08/2011</p>
+                            <p> &#8226; I provided regular maintenance and repair on the school building and grounds.</p>
+                            <p> &#8226; I also assisted the Director of Technology with various IT-related tasks.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <hr>
+                    <p align="center">Copyright &copy; Clay Boren 2015</p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+
+    </footer>
+</html>
